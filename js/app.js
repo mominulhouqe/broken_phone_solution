@@ -62,6 +62,7 @@ const processSearch = (dataLimit) =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     loadPhones(searchText, dataLimit);
+
 }
 
 // handle search button click
