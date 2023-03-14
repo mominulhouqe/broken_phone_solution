@@ -11,11 +11,11 @@ const displayPhones = (phones, dataLimit) =>{
     
     // console.log(phones);
     const phonesContainer = document.getElementById('phones-container');
-    // phonesContainer.textContent = '';
+    phonesContainer.textContent = '';
     // display 10 phones only 
     const showAll = document.getElementById('show-all');
-    if(dataLimit && phones.length > 10) {
-        phones = phones.slice(0, 10);
+    if(phones.length > dataLimit) {
+        phones = phones.slice(0, 1);
         showAll.classList.remove('d-none');
     }
     else{
@@ -34,11 +34,11 @@ const displayPhones = (phones, dataLimit) =>{
     // display all phones
     phones.forEach(phone =>{
 
-        // console.log(phone);
+        // condataLimitsole.log(phone);
 
         const phoneDiv  = document.createElement('div');
         phoneDiv.classList.add('col');
-        phonesContainer.innerHTML = `
+        phoneDiv.innerHTML = `
         <div class="card p-4">
             <img src="${phone.image}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -70,7 +70,7 @@ const processSearch = (dataLimit) =>{
 
     
     // start loader
-    processSearch(10);
+    processSearch();
 }) 
 
 
